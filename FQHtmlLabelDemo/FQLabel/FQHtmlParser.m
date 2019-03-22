@@ -32,7 +32,7 @@ static NSString * const kRegExAnchorPattern         = @"<a[^<>]+>(.|\n)*?</a>";
 static NSString * const kRegExAnchorHeadPattern     = @"<a[^<>]+>";
 static NSString * const kRegExAnchorTailPattern     = @"</a>";
 static NSString * const kRegExBoldPattern           = @"<b>[^<]*</b>";
-static NSString * const kRegExImgPattern            = @"<img(.*?)/>";
+static NSString * const kRegExImgPattern            = @"<img(.*?)>";
 static NSString * const kRegExBrakePattern          = @"<br([ |/]?)>";
 static NSString * const kRegExImgSrcPattern         = @"src=['|\"](.*?)['|\"]";
 static NSString * const kRegExLinkUrlPattern        = @"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)"
