@@ -175,7 +175,6 @@ static char * const kFQHtmlLabelRenderQueueKey = "com.widgets.htmllabelrender.fq
                     if ([attachment.content isKindOfClass:[UIImage class]]) {
                         UIImage *img = (UIImage *)attachment.content;
                         CGContextSaveGState(context);
-//                    CGContextSetAlpha(context, 0.2);
                         CGContextDrawImage(context, runBounds, img.CGImage);
                         CGContextRestoreGState(context);
                     } else if ([attachment.content isKindOfClass:[FQHtmlAnimatedViewManager class]]) {

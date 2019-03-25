@@ -164,7 +164,12 @@ static NSString * const kRegExLinkUrlPattern        = @"((http[s]{0,1}|ftp)://[a
             continue;
         }
         
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text] withString:@""];
+        NSString *tmp = [NSString stringWithFormat:@"%@>", text];
+        if ([tmp isEqualToString:@"<p>"] || [tmp isEqualToString:@"</p>"]) {
+            htmlString = [htmlString stringByReplacingOccurrencesOfString:tmp withString:@"<br/>"];
+        } else {
+            htmlString = [htmlString stringByReplacingOccurrencesOfString:tmp withString:@""];
+        }
     }
     
     return htmlString;
