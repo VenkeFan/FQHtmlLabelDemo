@@ -25,14 +25,16 @@
     
     FQHtmlLabel *htmlLabel = [[FQHtmlLabel alloc] init];
     htmlLabel.htmlDelegate = self;
-    htmlLabel.typingAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor blackColor]};
+    htmlLabel.imagePaddingY = 10;
+    NSMutableParagraphStyle *paragStyle = [NSMutableParagraphStyle new];
+    paragStyle.lineSpacing = 5;
+    htmlLabel.typingAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor blackColor], NSParagraphStyleAttributeName: paragStyle};
     htmlLabel.linkTextAttributes = @{NSUnderlineStyleAttributeName: @(YES),
                                       NSForegroundColorAttributeName: [UIColor redColor]};
     htmlLabel.backgroundColor = [UIColor lightGrayColor];
     htmlLabel.frame = CGRectMake(12, [UIApplication sharedApplication].statusBarFrame.size.height + 44 + 12, [UIScreen mainScreen].bounds.size.width - 24, 500);
     htmlLabel.layer.borderWidth = 1.0;
     htmlLabel.layer.borderColor = [UIColor blackColor].CGColor;
-    htmlLabel.imagePaddingY = 10;
     [self.view addSubview:htmlLabel];
     
     NSURL *testFileUrl = [[NSBundle mainBundle] URLForResource:@"index2" withExtension:@"html"];
